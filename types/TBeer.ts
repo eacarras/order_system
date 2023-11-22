@@ -5,3 +5,7 @@ export type TBeer = {
     price: number
     currency: "USD"
 }
+
+export type TBeerExtended = TBeer & {
+    amount: number
+}

@@ -15,7 +15,7 @@ describe('/api/beer', () => {
     test('can not create an order with wrong ids', () => {
         let completOrder: boolean = true
         try {
-            const order: TOrder = OrderService.createAnOrder(1, [100])
+            const order: TOrder = OrderService.createAnOrder(1, [{ id: 100, amount: 2 }])
         } catch(err) {
             completOrder = false
         }
@@ -25,7 +25,7 @@ describe('/api/beer', () => {
     test('create an order success', () => {
         let completOrder: boolean = true
         try {
-            const order: TOrder = OrderService.createAnOrder(1, [1, 2])
+            const order: TOrder = OrderService.createAnOrder(1, [{ id: 1, amount: 10 }, { id: 2, amount: 14}])
         } catch(err) {
             completOrder = false
         }
