@@ -103,7 +103,7 @@ const Home = () => {
             </div>
 
             {/** Pay Button */}
-            <button className="mt-12 rounded border-2 p-2" onClick={pay}>Pay</button>
+            <button className="mt-12 rounded border-2 p-2" disabled={!friendsSelected.length} onClick={pay}>Pay</button>
           </div>
         )}
       </div>
