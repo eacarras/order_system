@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "9289d66d-d828-4b51-aa91-f1111944120d",
+		"name": "Orders System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "9604466"
+	},
+	"item": [
+		{
+			"name": "Get Beers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/beer"
+			},
+			"response": []
+		},
+		{
+			"name": "Create an Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"id\": 1,\n    \"products\": [\n        { \"id\": 1, \"amount\": 3},\n        { \"id\": 2, \"amount\": 2}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/order"
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Check",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3000/api/check/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Pay a check",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"id\": 1,\n    \"products\": [\n        { \"id\": 1, \"amount\": 3},\n        { \"id\": 2, \"amount\": 2}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/order"
+			},
+			"response": []
+		}
+	]
+}

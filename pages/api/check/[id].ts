@@ -7,7 +7,7 @@ import { TCheck } from '@/types/TCheck'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<any> {
     // Basic method validation
-    if (req.method !== 'GET') {
+    if (req.method !== 'POST') {
         return res.status(405).json({ message: 'Method not supported' })
     }    
 
