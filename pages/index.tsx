@@ -86,6 +86,9 @@ const Home = () => {
             </div>
             {/** Payment Section */}
             <h3 className="text-g font-semibold mt-4">Payment Section</h3>
+            <p className='mr-8'>
+              <span className='font-semibold'>Total per friend selected:</span> {!friendsSelected.length ? "Please select a friend first" : `${check.total / friendsSelected.length}`}
+            </p>
             <div className='flex flex-row py-2'>
               <select name="friend" id="friends" onChange={updateSelectedFriends} >
                 {friends.map((friend: string, idx: number) => (
