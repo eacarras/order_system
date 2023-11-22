@@ -28,6 +28,22 @@ class CheckService {
 
         return check
     }
+
+    /**
+     * @description Util function to get a check giving the check id
+     * @param id [number] Check identifier
+     * @returns []
+     */
+    static getById(id: number): TCheck {
+        if (id !== 2) {
+            throw new Error('Check not found')
+        }
+
+        // Generate a check giving a mock order identifier
+        // In the ideal case we need to retrieve the check already generated
+        const check: TCheck = CheckService.getByOrderId(id)
+        return check
+    }
 }
 
 export default CheckService

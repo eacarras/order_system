@@ -2,6 +2,8 @@ import path from 'path'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import CheckService from '@/services/check.service'
+import { TCheck } from '@/types/TCheck'
+
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<any> {
     // Basic method validation
@@ -11,11 +13,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     try {
         const { id: orderId } = req.query
-        const data: any = CheckService.getByOrderId(Number(orderId))
+        const data: TCheck = CheckService.getByOrderId(Number(orderId))
 
         return res.status(200).json({ data })
     } catch (err) {        
-        console.error(`${path.basename(__filename)}:error getting all the beers, Error:${err}`)
-        return res.status(500).json({ code: 'server-error', message: 'Error on get all the beers', data: err })
+        console.error(`${path.basename(__filename)}:error generating the check, Error:${err}`)
+        return res.status(500).json({ code: 'server-error', message: 'Error generating the check', data: err })
     }
 }
